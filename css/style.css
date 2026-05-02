@@ -4,9 +4,49 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#menu h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+#play-btn {
+    font-size: 1.1rem;
+    padding: 1rem 4rem;
+    border-radius: 10px;
+    border: 1px solid #67aa59;
+    background-color: #5eaf4e;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+
+#play-btn:hover {
+    background-color: #73a06a;
+}
+
 .game-board {
     width: 100%;
-    height: 500px;
+    height: 70vh;
     border-bottom: 15px solid #36a820;
     margin: 0 auto;
     position: relative;
@@ -14,10 +54,19 @@
     background: linear-gradient(#87ceeb, #e0f6ff);
 }
 
+.game-bottom {
+    width: 100%;
+    height: 30vh;
+    background-color: #501818;
+}
+
 .pipe {
     position: absolute;
     bottom: 0;
     width: 80px;
+}
+
+.pipe.active {
     animation: pipe-animation 1.5s infinite linear;
 }
 
@@ -34,6 +83,9 @@
 .clouds {
     position: absolute;
     width: 550px;
+}
+
+.clouds.active {
     animation: clouds-animation 10s infinite linear;
 }
 

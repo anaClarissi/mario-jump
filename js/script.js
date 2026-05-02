@@ -1,6 +1,12 @@
+const playBtn = document.querySelector("#play-btn");
+
+const menu = document.querySelector("#menu");
+
 const mario = document.querySelector(".mario");
 
 const pipe = document.querySelector(".pipe");
+
+const clouds = document.querySelector(".clouds");
 
 const jump = () => {
 
@@ -14,7 +20,16 @@ const jump = () => {
 
 }
 
-const loop = setInterval(() => {
+
+playBtn.addEventListener("click", () => {
+
+    menu.style.display = "none";
+
+    pipe.classList.add("active");
+
+    clouds.classList.add("active")
+
+    const loop = setInterval(() => {
 
     const pipePosition = pipe.offsetLeft;
 
@@ -36,6 +51,8 @@ const loop = setInterval(() => {
 
     }
 
-}, 10);
+    }, 10);
+
+});
 
 document.addEventListener("keydown", jump);
